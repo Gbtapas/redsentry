@@ -71,14 +71,14 @@ def main():
     api_key = None
 
     # Verificar se foi passada API key
- if "--ai" in sys.argv:
-    idx = sys.argv.index("--ai")
-    if idx + 1 < len(sys.argv):
-        api_key = sys.argv[idx + 1]
+    if "--ai" in sys.argv:
+        idx = sys.argv.index("--ai")
+        if idx + 1 < len(sys.argv):
+            api_key = sys.argv[idx + 1]
 
-# Se nao passou, tenta variavel de ambiente
-if api_key is None:
-    api_key = os.environ.get("GEMINI_API_KEY")
+    # Se nao passou, tenta variavel de ambiente
+    if api_key is None:
+        api_key = os.environ.get("GEMINI_API_KEY")
 
     print(BANNER)
     separador("INICIANDO ANALISE")
